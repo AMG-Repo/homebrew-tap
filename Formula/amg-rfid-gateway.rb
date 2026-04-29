@@ -7,10 +7,10 @@ class AmgRfidGateway < Formula
   on_linux do
     if Hardware::CPU.arm?
       url "https://github.com/AMG-Repo/amg-rfid-gateway/releases/download/v#{version}/amg-rfid-gateway-v#{version}-linux-arm64.tar.gz"
-      sha256 "PLACEHOLDER_ARM64_SHA256"
+      sha256 "2f8d96494d68e6fbe849fd39ef7005f5c3beca902b32fd48b1d0014306a84e50"
     else
       url "https://github.com/AMG-Repo/amg-rfid-gateway/releases/download/v#{version}/amg-rfid-gateway-v#{version}-linux-amd64.tar.gz"
-      sha256 "PLACEHOLDER_AMD64_SHA256"
+      sha256 "07a4cd992f4aa27abd5b8234e8643aa9cc4319d83f2c4511dbea4d3c97f6d3a5"
     end
   end
 
