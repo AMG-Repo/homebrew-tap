@@ -41,7 +41,6 @@ class AmgRfidGateway < Formula
   service do
     run [opt_bin/"gateway"]
     working_dir var/"lib/amg-rfid-gateway"
-    environment GATEWAY_CONFIG: etc/"amg-rfid-gateway/config.yaml"
     keep_alive true
     log_path var/"log/amg-rfid-gateway.log"
     error_log_path var/"log/amg-rfid-gateway.log"
