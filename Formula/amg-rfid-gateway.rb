@@ -16,7 +16,7 @@ class AmgRfidGateway < Formula
 
   def install
     bin.install "gateway"
-    bin.install "tui"
+    bin.install "gateway-tui"
     pkgetc.install "config.example.yaml" => "config.yaml"
     (var/"lib/amg-rfid-gateway").mkpath
   end
