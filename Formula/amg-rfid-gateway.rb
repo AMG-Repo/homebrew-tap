@@ -1,16 +1,16 @@
 class AmgRfidGateway < Formula
   desc "AMG RFID Edge Gateway — syncs RFID readings from antennas to VPS"
   homepage "https://github.com/AMG-Repo/amg-rfid-gateway"
-  version "0.2.0"
+  version "0.2.1"
   license "MIT"
 
   on_linux do
     if Hardware::CPU.arm?
       url "https://github.com/AMG-Repo/amg-rfid-gateway/releases/download/v#{version}/amg-rfid-gateway-v#{version}-linux-arm64.tar.gz"
-      sha256 "c998bb49fd9daa05692147b53b85eda5fde012e40c364373c732ccc58234f794"
+      sha256 "2f53297b2952fbe9c41bb0a10cc7cf1f108b833c8a48a71b892ca29f66cf0da8"
     else
       url "https://github.com/AMG-Repo/amg-rfid-gateway/releases/download/v#{version}/amg-rfid-gateway-v#{version}-linux-amd64.tar.gz"
-      sha256 "437e10005b3038cee3842cca85cf2f168352708966fca609ea53bfc02d47c239"
+      sha256 "7eda014f74473fab0852c0cfc37c9e590d675b395c285da5d3b87df9518d5b5f"
     end
   end
 
@@ -28,17 +28,20 @@ class AmgRfidGateway < Formula
       Config:  #{etc}/amg-rfid-gateway/config.yaml
       Data:    #{var}/lib/amg-rfid-gateway
 
-      Next steps:
-        1. Edit config:    nano #{etc}/amg-rfid-gateway/config.yaml
-        2. Start service:  brew services start AMG-Repo/tap/amg-rfid-gateway
-        3. Or run manual:  gateway --config #{etc}/amg-rfid-gateway/config.yaml
+      Quick start:
+        gateway                  # auto-detects config
+        amg-rfid-gateway         # same thing
+
+      Or as service:
+        brew services start AMG-Repo/tap/amg-rfid-gateway
 
     EOS
   end
 
   service do
-    run [opt_bin/"gateway", "--config", etc/"amg-rfid-gateway/config.yaml"]
+    run [opt_bin/"gateway"]
     working_dir var/"lib/amg-rfid-gateway"
+    environment GATEWAY_CONFIG: etc/"amg-rfid-gateway/config.yaml"
     keep_alive true
     log_path var/"log/amg-rfid-gateway.log"
     error_log_path var/"log/amg-rfid-gateway.log"
