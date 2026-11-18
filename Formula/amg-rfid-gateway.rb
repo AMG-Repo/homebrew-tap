@@ -1,16 +1,16 @@
 class AmgRfidGateway < Formula
   desc "AMG RFID Edge Gateway — syncs RFID readings from antennas to VPS"
   homepage "https://github.com/AMG-Repo/amg-rfid-gateway"
-  version "0.7.2"
+  version "0.8.0"
   license "MIT"
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/AMG-Repo/amg-rfid-gateway/releases/download/v0.7.2/amg-rfid-gateway-v0.7.2-linux-arm64.tar.gz"
-      sha256 "ff7cc5e5f66aaae86c6cf7ff48cd43236039fdb31836101fcb5f9924a1c0b218"
+      url "https://github.com/AMG-Repo/amg-rfid-gateway/releases/download/v0.8.0/amg-rfid-gateway-v0.8.0-linux-arm64.tar.gz"
+      sha256 "ed738e785600e88fb00660a7d169b83f4f38185f1512933a5f500b8e66527e12"
     else
-      url "https://github.com/AMG-Repo/amg-rfid-gateway/releases/download/v0.7.2/amg-rfid-gateway-v0.7.2-linux-amd64.tar.gz"
-      sha256 "43ddbb863ac55b78c934c3a392c53010b23040ea75513cdcdf521fa79794fa1c"
+      url "https://github.com/AMG-Repo/amg-rfid-gateway/releases/download/v0.8.0/amg-rfid-gateway-v0.8.0-linux-amd64.tar.gz"
+      sha256 "c52827b33a3cac842fc2c068d44135b063ad901752098646e39f46f8d417c037"
     end
   end
 
